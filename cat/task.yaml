@@ -1,0 +1,15 @@
+name: "cat"
+title: "擅作主張的貓奴太過分"
+n_input: 10
+public_testcases: all
+score_mode: max_subtask
+token_mode: disabled
+time_limit: 1.0
+memory_limit: 128
+max_submission_number: 20
+max_user_test_number: 20
+min_submission_interval: 60
+min_user_test_interval: 60
+primary_language: ""
+infile: ""
+outfile: ""

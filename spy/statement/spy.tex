@@ -1,0 +1,128 @@
+\documentclass[18pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=25mm
+}
+
+\setlength\parindent{0pt}
+\newcommand{\yr}{2025}
+\newcommand{\ssn}{第一季}
+\newcommand{\taskname}{如果間諜是隻貓}
+\newcommand{\taskcodename}{spy}
+\newenvironment{codeblock}{\begin{tcolorbox}[arc=1pt,outer arc=1pt,boxrule=0.5pt,colback=fillinggray,colframe=outlinegray] \ttfamily}{\end{tcolorbox}}
+
+\definecolor{outlinegray}{RGB}{221, 221, 221}
+\definecolor{fillinggray}{RGB}{238, 238, 238}
+
+\begin{document}
+
+    % head
+    \begin{multicols}{2}
+    
+        \begin{flushleft}
+        \includegraphics[height=25mm]{logo.png}
+        \end{flushleft}
+        
+        \columnbreak
+        
+        \begin{flushright}
+        \vspace*{3mm}
+        \textbf{\Large \taskcodename}
+        
+        \vspace*{1mm}
+        PCOI \yr\ \ssn
+        \end{flushright}
+    
+    \end{multicols}
+    
+    \hrule
+    \vspace{3mm}
+
+    % body
+    \section*{\fontsize{24}{28}\selectfont\taskname}
+    就在剛剛，情報小組發送來了最新情報，當中包括了某某園區的總部地理位置的GPS坐標，由於園區的守衛深嚴，情報小組很難再深入調查，所以需要派出我們的秘密武器，一隻經過10年長時間進行間諜任務特訓的貓貓，無錯，就是你了，你平時食的高級彩虹貓糧，令你的智商已經高於平常的人類，現在請立即出動吧！\\
+
+    當你到達目標地點後發現，園區内有$N$個絕密檔案和$M$個人員。在園區的人員都必須配戴具有員工編號的名牌，員工$j$的名牌的編號是$B[j]$。而且絶密檔案都是紙本檔案，每份檔案i都編有特定的數字編號$A[i]$，而聰明的你加上你本身是貓的敏銳觀察力，發現了原來人員的編號和他們編輯的絶密檔案存在著一些隱藏關係，現在請用你聰明的貓腦，計算出各個人員正在編輯多少份絶密檔案。\\
+
+    隱藏關係：若人員$j$的編號是檔案$i$的後綴，則檔案$i$是由人員$j$編輯。\\
+
+    例如：檔案編號為 $12345$ 的文件，正在被編號為 $5, 45, 345, 2345, 12345$ 的人員共同編輯。\\
+
+    現在請根據已知的檔案編號和人員編號，計算出每個人員$j$正在編輯的檔案數目$C[j]$。\\
+    \section*{實現細節}
+        你需要在標準輸入（\texttt{stdin}）讀入樣例，並在標準輸出（\texttt{stdout}）輸出答案。
+    
+    \subsection*{輸入格式}
+    \begin{codeblock}
+        $N \quad M $\\
+        $A[1] \\ A[2] \\ A[3] \\ \dots \\ A[N]$
+        $B[1] \\ B[2] \\ B[3] \\ \dots \\ B[M]$
+    \end{codeblock}
+
+    \subsection*{輸出格式}
+    \begin{codeblock}
+        $C[1] \\ C[2] \\ C[3] \\ \dots \\ C[M]$
+    \end{codeblock}
+    
+    \section*{例子}
+
+    考慮以下樣例：  
+    \begin{codeblock}
+        6 5 \\
+        2123 \\
+        1123 \\
+        23 \\
+        24 \\
+        24 \\
+        12345\\
+        23 \\
+        123 \\
+        4 \\
+        4\\
+        12
+    \end{codeblock}
+    你的程序應輸出
+    \begin{codeblock}
+        3\\ 2\\ 1\\ 1\\ 0
+    \end{codeblock}
+    現在有 $6$ 個檔案，編號分別為 $2123, 1123, 23, 24, 24, 12345$，人員編號分別為 $23, 123, 4, 4, 12$。\\
+
+    $23 => 2123, 1123, 23\\
+    123 => 2123, 1123\\
+    4 => 24\\
+    4 => 24\\
+    12 => $沒有\\
+    
+    所以最後輸出為\\
+    $3\\
+    2\\
+    1\\
+    1\\
+    0\\$
+        
+    \section*{約束條件}
+    \begin{itemize}
+        \item $1 \le N \le 200000$
+        \item $1 \le X \le 200000$
+        \item $1 \le A[i] < 10^{9}$
+    \end{itemize}
+
+    \section*{子任務}
+    \begin{enumerate}
+        \item （50分）$1 \le N, M \le 1000$, 
+                     $1 \le A[i], B[j] \le 10^{6}$
+        \item （50分）没有額外的約束條件。
+    \end{enumerate}
+
+\end{document}

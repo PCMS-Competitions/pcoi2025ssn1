@@ -1,0 +1,106 @@
+\documentclass[18pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=25mm
+}
+
+\setlength\parindent{0pt}
+\newcommand{\yr}{2025}
+\newcommand{\ssn}{第一季}
+\newcommand{\taskname}{擅作主張的貓奴太過分}
+\newcommand{\taskcodename}{cat}
+\newenvironment{codeblock}{\begin{tcolorbox}[arc=1pt,outer arc=1pt,boxrule=0.5pt,colback=fillinggray,colframe=outlinegray] \ttfamily}{\end{tcolorbox}}
+
+\definecolor{outlinegray}{RGB}{221, 221, 221}
+\definecolor{fillinggray}{RGB}{238, 238, 238}
+
+\begin{document}
+
+    % head
+    \begin{multicols}{2}
+    
+        \begin{flushleft}
+        \includegraphics[height=25mm]{logo.png}
+        \end{flushleft}
+        
+        \columnbreak
+        
+        \begin{flushright}
+        \vspace*{3mm}
+        \textbf{\Large \taskcodename}
+        
+        \vspace*{1mm}
+        PCOI \yr\ \ssn
+        \end{flushright}
+    
+    \end{multicols}
+    
+    \hrule
+    \vspace{3mm}
+
+    % body
+    \section*{\fontsize{24}{28}\selectfont\taskname}
+    最近有一件事，令身為主人的貓貓十分生氣，就是貓奴竟然擅作主張把最高級的彩虹貓糧換成了低級糧，但是它的味道十分相似，一定要吃了才分辨出是高級的彩虹貓糧還是低級糧。每個貓糧都有自己的美味值，其中美味值是7的倍數或者數字中的某$k$($1 \le k$)位是$7$的貓糧是高級彩虹貓糧，反之則爲低級糧。作為一家之主的貓貓當然不能受此屈辱，如果連續吃到 $X$ 顆低級糧就會選擇發脾氣不吃了，如果吃到高級的彩虹貓糧則重新計算。今餐共有$N$個貓糧，每個貓糧的美味值是$A[i]$，請計算今餐一家之主能吃到的高級的彩虹貓糧的數量$C$。
+    \section*{實現細節}
+        你需要在標準輸入（\texttt{stdin}）讀入樣例，並在標準輸出（\texttt{stdout}）輸出答案。
+    
+    \subsection*{輸入格式}
+    \begin{codeblock}
+        $N \quad X $\\
+        $A[1] \quad A[2] \quad A[3] \quad \dots \quad A[N]$
+    \end{codeblock}
+
+    \subsection*{輸出格式}
+    \begin{codeblock}
+        $C$
+    \end{codeblock}
+    
+    \section*{例子}
+
+    考慮以下樣例：  
+    \begin{codeblock}
+        8 2\\
+        12 14 71 81 56 32 19 17
+    \end{codeblock}
+    你的程序應輸出
+    \begin{codeblock}
+        3
+    \end{codeblock}
+    總共有 $8$ 顆貓糧。\\
+
+    $12 =>$ 低級糧\\
+    $14 =>$ 高級彩虹貓糧\\
+    $71 =>$ 高級彩虹貓糧\\
+    $81 =>$ 低級糧\\
+    $56 =>$ 高級彩虹貓糧\\
+    $32 =>$ 低級糧\\
+    $19 =>$ 低級糧\\
+    $17 =>$ 高級彩虹貓糧\\
+
+    由於 $32, 19$ 有連續 $2$ 顆低級貓糧，一家之主就開始發脾氣了......\\
+    所以總共這餐食了 $3$ 顆高級彩虹貓糧。\\
+    
+    \section*{約束條件}
+    \begin{itemize}
+        \item $1 \le N \le 1000$
+        \item $1 \le X \le 1000$
+        \item $0 \le A[i] < 100$
+    \end{itemize}
+
+    \section*{子任務}
+    \begin{enumerate}
+        \item （100分）没有額外的約束條件。
+    \end{enumerate}
+
+\end{document}

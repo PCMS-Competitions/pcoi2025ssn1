@@ -10,94 +10,140 @@ tasks:
   - kakutani
   - magicdistribution
   - spy
+
 users:
-- password: R1G1gma
+- 
   username: R1G1
-- password: R1G2cvd
+  password: R1G1gma
+- 
   username: R1G2
-- password: R1G3jlq
+  password: R1G2cvd
+- 
   username: R1G3
-- password: R1G4eob
+  password: R1G3jlq
+- 
   username: R1G4
-- password: R1G5hfd
+  password: R1G4eob
+- 
   username: R1G5
-- password: R2G1qeo
+  password: R1G5hfd
+- 
   username: R2G1
-- password: R2G2ygd
+  password: R2G1qeo
+- 
   username: R2G2
-- password: R2G3qjx
+  password: R2G2ygd
+- 
   username: R2G3
-- password: R2G4nqq
+  password: R2G3qjx
+- 
   username: R2G4
-- password: R2G5uzs
+  password: R2G4nqq
+- 
   username: R2G5
-- password: R3G1los
+  password: R2G5uzs
+- 
   username: R3G1
-- password: R3G2fcx
+  password: R3G1los
+- 
   username: R3G2
-- password: R3G3rqy
+  password: R3G2fcx
+- 
   username: R3G3
-- password: R3G4vwt
+  password: R3G3rqy
+- 
   username: R3G4
-- password: R3G5sgo
+  password: R3G4vwt
+- 
   username: R3G5
-- password: R4G1mkx
+  password: R3G5sgo
+- 
   username: R4G1
-- password: R4G2xkd
+  password: R4G1mkx
+- 
   username: R4G2
-- password: R4G3qhm
+  password: R4G2xkd
+- 
   username: R4G3
-- password: R4G4dhg
+  password: R4G3qhm
+- 
   username: R4G4
-- password: R4G5zvm
+  password: R4G4dhg
+- 
   username: R4G5
-- password: R5G1soc
+  password: R4G5zvm
+- 
   username: R5G1
-- password: R5G2jxe
+  password: R5G1soc
+- 
   username: R5G2
-- password: R5G3tpe
+  password: R5G2jxe
+- 
   username: R5G3
-- password: R5G4dsi
+  password: R5G3tpe
+- 
   username: R5G4
-- password: R5G5rfk
+  password: R5G4dsi
+- 
   username: R5G5
-- password: R6G1gty
+  password: R5G5rfk
+- 
   username: R6G1
-- password: R6G2gbz
+  password: R6G1gty
+- 
   username: R6G2
-- password: R6G3guc
+  password: R6G2gbz
+- 
   username: R6G3
-- password: R6G4uty
+  password: R6G3guc
+- 
   username: R6G4
-- password: R6G5thv
+  password: R6G4uty
+- 
   username: R6G5
-- password: R7G1gth
+  password: R6G5thv
+- 
   username: R7G1
-- password: R7G2swg
+  password: R7G1gth
+- 
   username: R7G2
-- password: R7G3vvo
+  password: R7G2swg
+- 
   username: R7G3
-- password: R7G4elk
+  password: R7G3vvo
+- 
   username: R7G4
-- password: R7G5tak
+  password: R7G4elk
+- 
   username: R7G5
-- password: R8G1xbf
+  password: R7G5tak
+- 
   username: R8G1
-- password: R8G2fyg
+  password: R8G1xbf
+- 
   username: R8G2
-- password: R8G3lsc
+  password: R8G2fyg
+- 
   username: R8G3
-- password: R8G4vas
+  password: R8G3lsc
+- 
   username: R8G4
-- password: R8G5kzx
+  password: R8G4vas
+- 
   username: R8G5
-- password: R9G1our
+  password: R8G5kzx
+- 
   username: R9G1
-- password: R9G2dfv
+  password: R9G1our
+- 
   username: R9G2
-- password: R9G3dit
+  password: R9G2dfv
+- 
   username: R9G3
-- password: R9G4cgk
+  password: R9G3dit
+- 
   username: R9G4
-- password: R9G5ezz
+  password: R9G4cgk
+- 
   username: R9G5
+  password: R9G5ezz

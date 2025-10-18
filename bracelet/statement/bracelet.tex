@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=25mm
+}
+
+\setlength\parindent{0pt}
+\newcommand{\yr}{2025}
+\newcommand{\ssn}{第一季}
+\newcommand{\taskname}{手鍊}
+\newcommand{\taskcodename}{bracelet}
+\newenvironment{codeblock}{\begin{tcolorbox}[arc=1pt,outer arc=1pt,boxrule=0.5pt,colback=fillinggray,colframe=outlinegray] \ttfamily}{\end{tcolorbox}}
+
+\definecolor{outlinegray}{RGB}{221, 221, 221}
+\definecolor{fillinggray}{RGB}{238, 238, 238}
+
+\begin{document}
+
+% head
+\begin{multicols}{2}
+
+    \begin{flushleft}
+    \includegraphics[height=25mm]{logo.png}
+    \end{flushleft}
+    
+    \columnbreak
+    
+    \begin{flushright}
+    \vspace*{3mm}
+    \textbf{\Large \taskcodename}
+    
+    \vspace*{1mm}
+    PCOI \yr\ \ssn
+    \end{flushright}
+
+\end{multicols}
+
+\hrule
+\vspace{3mm}
+
+% body
+\section*{\fontsize{24}{28}\selectfont\taskname}
+從前，一位國王非常喜歡收集手鍊，尤其是由寶石串成的獨特手鍊。
+你收到了以下情報：
+\begin{itemize}
+    \item 手鍊是約干個寶石組成的序列
+    \item 有$K$種目前人類可以採集的寶石
+    \item 假如手鍊不能由約干個相同的手鍊連接成的，則稱為獨特的。
+\end{itemize}
+你作為國王的使者，你現在需要計算世界上有多少種長度為$N$的手鍊是獨特的。\\
+您的答案應對$10^9+7$取模。
+
+\subsection*{例子}
+以下用數字$0\sim 9$表示不同的寶石，
+\begin{itemize}
+    \item 101101101 不是獨特的（\textcolor{red}{101}\textcolor{blue}{101}\textcolor{green}{101}）
+    \item 12031203 不是獨特的（\textcolor{red}{1203}\textcolor{blue}{1203}）
+    \item 12012012 是獨特的
+    \item 1234123 是獨特的
+\end{itemize}
+
+\section*{實現細節}
+你需要在標準輸入（\texttt{stdin}）讀入樣例，並在標準輸出（\texttt{stdout}）輸出答案。
+
+\subsection*{輸入格式}
+\begin{codeblock}
+    $N\quad K$
+\end{codeblock}
+
+\subsection*{輸出格式}
+對於給定的$N$和$K$，獨特的手鍊的數量對$10^9+7$取模後的結果。
+\begin{codeblock}
+    $Ans$
+\end{codeblock}
+
+\section*{例子}
+
+考慮以下樣例：  
+\begin{codeblock}
+    6 2
+\end{codeblock}
+你的程序應輸出
+\begin{codeblock}
+    54
+\end{codeblock}
+
+\section*{約束條件}
+\begin{itemize}
+    \item $1 \le K,N \le 10^{16}$
+\end{itemize}
+
+\section*{子任務}
+\begin{enumerate}
+    \item （40分）$1 \le K,N \le 5\cdot 10^{6}$
+    \item （60分）沒有額外的約束條件
+\end{enumerate}
+
+\end{document}

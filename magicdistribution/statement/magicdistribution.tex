@@ -1,0 +1,123 @@
+\documentclass[18pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=25mm
+}
+
+\setlength\parindent{0pt}
+\newcommand{\yr}{2025}
+\newcommand{\ssn}{第一季}
+\newcommand{\taskname}{魔法分配}
+\newcommand{\taskcodename}{magicdistribute}
+\newenvironment{codeblock}{\begin{tcolorbox}[arc=1pt,outer arc=1pt,boxrule=0.5pt,colback=fillinggray,colframe=outlinegray] \ttfamily}{\end{tcolorbox}}
+
+\definecolor{outlinegray}{RGB}{221, 221, 221}
+\definecolor{fillinggray}{RGB}{238, 238, 238}
+
+\begin{document}
+
+    % head
+    \begin{multicols}{2}
+    
+        \begin{flushleft}
+        \includegraphics[height=25mm]{logo.png}
+        \end{flushleft}
+        
+        \columnbreak
+        
+        \begin{flushright}
+        \vspace*{3mm}
+        \textbf{\Large \taskcodename}
+        
+        \vspace*{1mm}
+        PCOI \yr\ \ssn
+        \end{flushright}
+    
+    \end{multicols}
+    
+    \hrule
+    \vspace{3mm}
+    
+    % body
+    \section*{\fontsize{24}{28}\selectfont\taskname}
+    魔法學院中，有 $n$ 位學生，學院要舉辦一場魔法對抗賽。教練想要從這 $n$ 位學生中選出 $m$ 位學生組成一支代表隊，可是這樣有太多不同的方法了！現在有 $q$ 個詢問，每個詢問給定 $n$ 和 $m$，請你計算出從 $n$ 位學生中選出 $m$ 位學生組成一支代表隊，有多少種不同的選法？由於答案可能很大，請輸出結果對給定的質數 $p$ 取模的值。
+
+    \section*{實現細節}
+        你需要在標準輸入（\texttt{stdin}）讀入樣例，在標準輸出（\texttt{stdout}）輸出答案。
+    \subsection*{輸入格式}
+    \begin{codeblock}
+        $q$ $p$\\
+        $n_1$ $m_1$\\
+        $n_2$ $m_2$\\
+        \vdots\\
+        $n_q$ $m_q$
+    \end{codeblock}
+    
+    其中：
+    \begin{itemize}
+        \item $q$ 表示詢問的數量
+        \item $p$ 是一個質數，用於取模運算
+        \item 接下來 $q$ 行，每行包含兩個整數 $n_i$ 和 $m_i$
+    \end{itemize}
+    
+    \subsection*{輸出格式}
+    \begin{codeblock}
+        $ans_1$\\
+        $ans_2$\\
+        \vdots\\
+        $ans_q$
+    \end{codeblock}
+    
+    對於每個詢問，輸出一行表示選法的總數模$p$的值。
+
+    \section*{例子}
+    考慮以下樣例： 
+    \begin{codeblock}
+        3 11\\
+        5 2\\
+        7 3\\
+        17 4
+    \end{codeblock}
+    你的程序應輸出：
+    \begin{codeblock}
+        10\\
+        2\\
+        4
+    \end{codeblock}
+    
+    解釋：
+    \begin{itemize}
+        \item \text{第一組 $n=5,m=2$有10種選法：} \\
+        $\{1,2,3\},\{1,2,4\},\{1,2,5\},\{1,3,4\},\{1,3,5\}$\\
+        $\{1,4,5\},\{2,3,4\},\{2,3,5\},\{2,4,5\},\{3,4,5\}$
+        \item \text{第二組 $n=7,m=3$有35種選法，模11餘2}
+        \item \text{第三組 $n=17,m=4$有2380種選法，模11餘4}
+    \end{itemize}
+
+    \section*{約束條件}
+    \begin{itemize}
+        \item $1 \le q \le 10^5$
+        \item $1 \le p \le 10^7$，且 $p$ 是質數
+        \item $0 \le m_i \le n_i \le 10^{100}$
+    \end{itemize}
+    \section*{子任務}
+    \begin{enumerate}
+        \item （20分）$p \le 100$， $n_i \le p$，$q \le 10$
+        \item （20分）$p \le 100$， $n_i \le p^2$，$q \le 100$
+        \item （20分）$p \le 1000$， $n_i \le p^3$，$q \le 1000$
+        \item （20分）$p \le 10^6$， $n_i \le 10^{18}$，$q \le 10^5$
+        \item （20分）保證 $q \le \frac{10^6}{\log_{p} n}$ ，且$p,q,n,m$符合約束條件。
+    \end{enumerate}
+\end{document}

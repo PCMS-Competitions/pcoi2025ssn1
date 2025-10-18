@@ -1,0 +1,53 @@
+# -------------------------------------------------------------------
+# General Ignores (OS, IDEs, Build Artifacts)
+# -------------------------------------------------------------------
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Specific Files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.swo
+
+# Build Artifacts and Compiled Files
+*.o
+*.lo
+*.so
+*.a
+*.dll
+*.lib
+*.dylib
+*.exe
+*.out
+*.bin
+*.obj
+/build/
+/dist/
+
+# Python Specific
+*.pyc
+__pycache__/
+venv/
+.env
+
+# Logs and Temporary files
+*.log
+tmp/
+temp/
+
+
+# -------------------------------------------------------------------
+# Competitive Programming Structure Specific Ignores
+# -------------------------------------------------------------------
+
+*/statement/**
+!*/statement/logo.png
+!*/statement/*.tex
+
+*/sol/**
+!*/sol/*.py
+!*/sol/*.cpp

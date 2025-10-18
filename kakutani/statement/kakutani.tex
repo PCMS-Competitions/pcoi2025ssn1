@@ -1,0 +1,104 @@
+\documentclass[18pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=25mm
+}
+
+\setlength\parindent{0pt}
+\newcommand{\yr}{2025}
+\newcommand{\ssn}{第一季}
+\newcommand{\taskname}{角谷猜想}
+\newcommand{\taskcodename}{kakutani}
+\newenvironment{codeblock}{\begin{tcolorbox}[arc=1pt,outer arc=1pt,boxrule=0.5pt,colback=fillinggray,colframe=outlinegray] \ttfamily}{\end{tcolorbox}}
+
+\definecolor{outlinegray}{RGB}{221, 221, 221}
+\definecolor{fillinggray}{RGB}{238, 238, 238}
+
+\begin{document}
+
+    % head
+    \begin{multicols}{2}
+    
+        \begin{flushleft}
+        \includegraphics[height=25mm]{logo.png}
+        \end{flushleft}
+        
+        \columnbreak
+        
+        \begin{flushright}
+        \vspace*{3mm}
+        \textbf{\Large \taskcodename}
+        
+        \vspace*{1mm}
+        PCOI \yr\ \ssn
+        \end{flushright}
+    
+    \end{multicols}
+    
+    \hrule
+    \vspace{3mm}
+    
+    % body
+    \section*{\fontsize{24}{28}\selectfont\taskname}
+    日本一位中學生發現一個奇妙的定理，請角谷教授證明，但教授無能為力，於是產生了角谷猜想。\\
+    猜想的內容如下：給定一個自然數，若為偶數則除以 2，若為奇數則乘 3 加 1 ，得到一個新的自然數。\\
+    按上面的法則繼續演算。若干次後得到的結果必為 1。\\
+    請編寫代碼驗證該猜想：給定一個自然數 $N$, 求其第一次運算成 1 的運算次數 $ans$。
+
+    \section*{實現細節}
+        你需要在標準輸入（\texttt{stdin}）讀入樣例，並在標準輸出（\texttt{stdout}）輸出答案。
+    \subsection*{輸入格式}
+    \begin{codeblock}
+        $N$
+    \end{codeblock}
+    \subsection*{輸出格式}
+    \begin{codeblock}
+        $ans$
+    \end{codeblock}
+    \section*{例子}
+    考慮以下樣例： 
+    \begin{codeblock}
+        $22$
+    \end{codeblock}
+    你的程序應輸出：
+    \begin{codeblock}
+        $15$
+    \end{codeblock}
+    
+    運算流程如下：\\
+    $22/2=11\\
+11*3+1=34\\
+34/2=17\\
+17*3+1=52\\
+52/2=26\\
+26/2=13\\
+13*3+1=40\\
+40/2=20\\
+20/2=10\\
+10/2=5\\
+5*3+1=16\\
+16/2=8\\
+8/2=4\\
+4/2=2\\
+2/2=1\\$
+經過15次運算得到自然數1。
+    \section*{約束條件}
+    \begin{itemize}
+        \item $1 \le n \le 100$
+    \end{itemize}
+    \section*{子任務}
+    \begin{enumerate}
+        \item （100分）没有額外的約束條件
+    \end{enumerate}
+\end{document}we

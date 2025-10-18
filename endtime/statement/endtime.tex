@@ -1,0 +1,99 @@
+\documentclass[18pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=25mm
+}
+
+\setlength\parindent{0pt}
+\newcommand{\yr}{2025}
+\newcommand{\ssn}{第一季}
+\newcommand{\taskname}{彼岸花開}
+\newcommand{\taskcodename}{endtime}
+\newenvironment{codeblock}{\begin{tcolorbox}[arc=1pt,outer arc=1pt,boxrule=0.5pt,colback=fillinggray,colframe=outlinegray] \ttfamily}{\end{tcolorbox}}
+
+\definecolor{outlinegray}{RGB}{221, 221, 221}
+\definecolor{fillinggray}{RGB}{238, 238, 238}
+
+\begin{document}
+
+    % head
+    \begin{multicols}{2}
+    
+        \begin{flushleft}
+        \includegraphics[height=25mm]{logo.png}
+        \end{flushleft}
+        
+        \columnbreak
+        
+        \begin{flushright}
+        \vspace*{3mm}
+        \textbf{\Large \taskcodename}
+        
+        \vspace*{1mm}
+        PCOI \yr\ \ssn
+        \end{flushright}
+    
+    \end{multicols}
+    
+    \hrule
+    \vspace{3mm}
+    
+    % body
+    \section*{\fontsize{24}{28}\selectfont\taskname}
+    給定 $m$ 個區間 $[l_i,\ r_i]$ 和 $n$ 個顔色 ${c_j}$\\
+    求下標 $j$ 為 $[l_i,\ r_i]$ 區間内的 $c_j$ 按序組成了多少個顔色段 $cnt_i$
+    \section*{實現細節}
+        你需要在標準輸入（\texttt{stdin}）讀入樣例，並在標準輸出（\texttt{stdout}）輸出答案。
+    \subsection*{輸入格式}
+    \begin{codeblock}
+        $n\quad m$\\
+        $l_1 \quad r_1$\\
+        $l_2 \quad r_2$\\
+        $\vdots $\\
+        $l_m \quad r_m$\\
+        $c_1 \quad c_2 \quad \dots \quad c_n$
+    \end{codeblock}
+    \subsection*{輸出格式}
+    \begin{codeblock}
+        $cnt_1$\\
+        $cnt_2$\\
+        $\vdots$\\
+        $cnt_m$
+    \end{codeblock}
+    
+    \section*{例子}
+    考慮以下樣例： 
+    \begin{codeblock}
+        $5\quad 2$\\
+        $1 \quad 4$\\
+        $2 \quad 5$\\
+        $1 \quad 1\quad 2\quad 2\quad 1$
+    \end{codeblock}
+    你的程序應輸出：
+    \begin{codeblock}
+        $2$\\
+        $3$
+    \end{codeblock}
+    \section*{約束條件}
+    \begin{itemize}
+        \item $1 \le n,m \le 200000$
+        \item $1\le c_i \le 1e9$
+        \item $1 \le l_i \le r_i\le n$
+    \end{itemize}
+    \section*{子任務}
+    \begin{enumerate}
+        \item （40分）$1 \le n,m \le 1000$
+        \item （60分）没有額外的約束條件
+    \end{enumerate}
+\end{document}

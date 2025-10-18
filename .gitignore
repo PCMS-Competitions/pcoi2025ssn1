@@ -45,8 +45,9 @@ temp/
 # -------------------------------------------------------------------
 
 */statement/**
-!*/statement/logo.png
+!*/statement/*.pdf
 !*/statement/*.tex
+!*/statement/logo.png
 
 */sol/**
 !*/sol/*.py
